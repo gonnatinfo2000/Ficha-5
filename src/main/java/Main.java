@@ -1,0 +1,27 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Pessoa pessoa = new Pessoa("Gonçalo", "Natividade", 20, 0.00);
+		System.out.println(pessoa);
+		
+		ArrayList<Pessoa> listaPessoas = new ArrayList<Pessoa>();
+		
+		Pessoa pessoa1 = new Pessoa("Gonçalo", "Natividade", 20, 10.00);
+		Pessoa pessoa2 = new Pessoa("Margarida", "Diniz", 37, 20.00);
+		Pessoa pessoa3 = new Pessoa("Fábio", "Freitas", 27, 15.00);
+		Pessoa pessoa4 = new Pessoa("Luís", "Filipe", 30, 30.00);
+		
+		listaPessoas.add(pessoa1);
+		listaPessoas.add(pessoa2);
+		listaPessoas.add(pessoa3);
+		listaPessoas.add(pessoa4);
+		
+		/* totalSaldo(listaPessoas); 
+		
+		System.out.println(obterInformacaoFicheiro("/pessoas.json")); */
+	}
+	
+}
