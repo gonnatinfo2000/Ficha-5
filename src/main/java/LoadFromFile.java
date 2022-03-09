@@ -30,17 +30,17 @@ public class LoadFromFile {
 		return listaPessoa; 
 	}
 
-	private InputStream getFileAsIOStream(String nomeFicheiro) {
+	public InputStream getFileAsIOStream(String nomeFicheiro) {
 		InputStream is = this.getClass().getClassLoader().getResourceAsStream(nomeFicheiro);
 		
 		if (is == null) {
             throw new IllegalArgumentException(nomeFicheiro + "não foi encontrado");
         }	
-		
+
 		return is;
 	}
 	
-	private String getFileContent(InputStream is) {
+	public String getFileContent(InputStream is) {
 		String conteudo = "";
 		
 		try {
@@ -60,7 +60,7 @@ public class LoadFromFile {
         return conteudo;
 	}
 	
-	private static ArrayList<Pessoa> converterStringParaListaPessoa(String texto) throws JSONException {
+	public static ArrayList<Pessoa> converterStringParaListaPessoa(String texto) throws JSONException {
 
         ArrayList<Pessoa> listaPessoa = new ArrayList<Pessoa>();
         JSONArray jsonArray = new JSONArray(texto);
@@ -80,4 +80,5 @@ public class LoadFromFile {
         } 
         return listaPessoa;
 	}
+	
 }

@@ -3,7 +3,12 @@ import java.util.List;
 
 public class Main {
 
+	private static final String IDADE = null;
+
 	public static void main(String[] args) {
+		
+		LoadFromFile load = new LoadFromFile();
+		
 		Pessoa pessoa = new Pessoa("Gonçalo", "Natividade", 20, 0.00);
 		System.out.println(pessoa);
 		
@@ -19,9 +24,12 @@ public class Main {
 		listaPessoas.add(pessoa3);
 		listaPessoas.add(pessoa4);
 		
-		/* totalSaldo(listaPessoas); 
+		Mercado mercado = new Mercado(listaPessoas);
+		mercado.totalSaldo(listaPessoas); 
 		
-		System.out.println(obterInformacaoFicheiro("/pessoas.json")); */
+		System.out.println(load.obterInformacaoFicheiro("./pessoas.json"));
+		System.out.println(load.getFileContent(load.getFileAsIOStream("./pessoas.json")));
+		System.out.println(load.converterStringParaListaPessoa(load.getFileContent(load.getFileAsIOStream("./pessoas.json"))));
 	}
 	
 }
